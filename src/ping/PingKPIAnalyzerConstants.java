@@ -4,8 +4,11 @@ import java.util.Map;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
+// change the class name
 public class PingKPIAnalyzerConstants
 {
+
+    // check whole class if you think particular variable should be configurable then add it in properties file.
     protected static final Logger LOGGER = Logger.getLogger(PingKPIAnalyzer.class.getName());
 
     protected static final Pattern LOSS_PATTERN = Pattern.compile("(\\d+)% packet loss");
@@ -26,6 +29,7 @@ public class PingKPIAnalyzerConstants
 
     protected static final int DEFAULT_PING_PROCESS_TIMEOUT = 5;
 
+    // it should be in int format
     protected static final String COMMAND_PACKET_COUNT = ConfigLoader.get("ping.packet.count", String.valueOf(DEFAULT_COMMAND_PACKET_COUNT));
 
     protected static final int PING_PROCESS_TIMEOUT = Integer.parseInt(ConfigLoader.get("ping.timeout", String.valueOf(DEFAULT_PING_PROCESS_TIMEOUT)));
@@ -56,8 +60,10 @@ public class PingKPIAnalyzerConstants
 
     protected static final String PACKET_LOSS_INITIAL = "Packet Loss: ";
 
+    // change the name
     protected static String LINE = "";
 
+    // it should not be static
     protected static Process process = null;
 
     protected static final Map<Integer, String> RTT_OUTPUT = Map.of(

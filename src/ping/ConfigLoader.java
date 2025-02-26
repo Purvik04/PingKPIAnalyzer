@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 import static ping.PingKPIAnalyzerConstants.LOGGER;
 
+// change the class name
 public class ConfigLoader
 {
     private static final Properties properties = new Properties();
@@ -13,6 +14,7 @@ public class ConfigLoader
 
     static
     {
+        // use this java default method Thread.currentThread().getContextClassLoader()
         try (var fileInputStream = new FileInputStream(CONFIG_FILE_NAME))
         {
             properties.load(fileInputStream);
